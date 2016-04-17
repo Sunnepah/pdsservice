@@ -1,0 +1,30 @@
+defusedxml==0.4.1
+Django==1.9.5
+django-appconf==1.0.1
+django-extensions==1.6.1
+django-filter==0.13.0
+django-tag-parser==2.1
+djangorestframework==3.3.3
+docutils==0.12
+dominate==2.2.0
+html5lib==0.9999999
+isodate==0.5.4
+keepalive==0.5
+pyparsing==2.1.1
+python-dateutil==2.5.2
+python-mimeparse==1.5.1
+PyYAML==3.11
+rdflib==4.2.1
+six==1.10.0
+SPARQLWrapper==1.7.6
+# Failed to install use sudo apt-get install python-dev
+# http://stackoverflow.com/questions/18564745/cant-pip-install-mysql-python
+#sudo apt-get install libmysqlclient-dev
+MySQL-python==1.2.5
+rcssmin==1.0.6
+rjsmin==1.0.12
+termcolor==1.1.0
+Werkzeug==0.11.3
+wheel==0.24.0
+wstools==0.4.3
+paramiko
