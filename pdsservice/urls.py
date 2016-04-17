@@ -21,11 +21,10 @@ from pdsapi.views import contact_returns, accept_command, get_user_contact
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    # url(r'^accounts/', include('registration.backends.default.urls', namespace='registration')),
     url(r'^$', index),
-    url(r'^accounts/', include('registration.backends.default.urls')),
-
-    # TODO structure the routes properly
     url(r'^contact_returns/$', contact_returns, name='contact'),
     url(r'^api/v1/commands/$', accept_command, name='accept_command'),
     url(r'^api/v1/user/contact/$', get_user_contact, name='get_user_contact'),
+    # url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
