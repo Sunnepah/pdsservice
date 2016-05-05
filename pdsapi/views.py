@@ -99,3 +99,14 @@ def get_user_contact(request):
         }, status=status.HTTP_200_OK)
     except:
         return Response({'response': 'No content'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET'])
+def status_check(request):
+    try:
+        return Response({
+            'status': 'ok',
+            'message': 'fine'
+        }, status=status.HTTP_200_OK)
+    except:
+        return Response({'response': 'No content'}, status=status.HTTP_404_NOT_FOUND)
