@@ -17,7 +17,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from pdsoauth.views import index
-from pdsapi.views import contact_returns, accept_command, get_user_contact,status_check
+from pdsapi.views import contact_returns, accept_command,\
+    get_user_contact,status_check, get_user_email
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -27,5 +28,5 @@ urlpatterns = [
     url(r'^api/v1/commands/$', accept_command, name='accept_command'),
     url(r'^api/v1/user/contact/$', get_user_contact, name='get_user_contact'),
     url(r'^status/$', status_check, name='status_check'),
-    # url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    url(r'^api/v1/users/(\d+)/emails/$', get_user_email, name='get_user_email'),
 ]

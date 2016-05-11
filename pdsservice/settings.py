@@ -160,9 +160,13 @@ REST_FRAMEWORK = {
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# GRAPH
+GRAPH_ROOT = 'http://graph.ir.ee/users'
+# GRAPH_ROOT = 'http://192.168.33.19:9000/users'
 
 # VIRTUOSO SETTINGS
 SPARQL_ENDPOINT = "pds.dev:8890/sparql"
+SPARQL_AUTH_ENDPOINT = "http://192.168.33.18:8890/sparql-auth"
 
 VIRTUOSO_HOST = "192.168.33.18"
 VIRTUOSO_PORT = "8890"
