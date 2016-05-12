@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^api/v1/commands/$', accept_command, name='accept_command'),
     url(r'^api/v1/user/contact/$', get_user_contact, name='get_user_contact'),
     url(r'^status/$', status_check, name='status_check'),
-    url(r'^api/v1/users/(\d+)/emails/$', get_user_email, name='get_user_email'),
+    # url(r'^api/v1/users/(\d+)/emails/$', get_user_email, name='get_user_email'),
+    url(r'^api/v1/user/user_id/emails/$', get_user_email, name='get_user_email'),
 ]

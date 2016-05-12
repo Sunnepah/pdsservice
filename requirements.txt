@@ -27,4 +27,6 @@ termcolor==1.1.0
 Werkzeug==0.11.3
 wheel==0.24.0
 wstools==0.4.3
+#run sudo apt-get install libffi-dev and sudo apt-get install libssl-dev before
 paramiko
+gunicorn
