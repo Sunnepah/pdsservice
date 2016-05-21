@@ -15,19 +15,15 @@ Including another URLconf
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
-from pdsoauth.views import index
-from pdsapi.views import contact_returns, accept_command,\
-    get_user_contact,status_check, get_user_email
+# from django.contrib import admin
+
+from views import accept_command
+from pdsapi.views import status_check, get_user_email
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    # url(r'^accounts/', include('registration.backends.default.urls', namespace='registration')),
-    url(r'^$', index),
-    url(r'^contact_returns/$', contact_returns, name='contact'),
+    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', status_check),
     url(r'^api/v1/commands/$', accept_command, name='accept_command'),
-    url(r'^api/v1/user/contact/$', get_user_contact, name='get_user_contact'),
     url(r'^status/$', status_check, name='status_check'),
-    # url(r'^api/v1/users/(\d+)/emails/$', get_user_email, name='get_user_email'),
-    url(r'^api/v1/user/user_id/emails/$', get_user_email, name='get_user_email'),
+    url(r'^api/v1/users/(\d+)/emails/$', get_user_email, name='get_user_email'),
 ]

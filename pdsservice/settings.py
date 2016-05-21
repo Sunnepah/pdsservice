@@ -32,18 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    # 'registration',
     'django.contrib.auth',
     'django.contrib.sites',
-    # 'registration_defaults',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'oauth2_provider',
     'rest_framework',
-    'pdsapi',
-    'pdsoauth',
+    'pdsapi'
 ]
 
 MIDDLEWARE_CLASSES = [
