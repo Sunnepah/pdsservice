@@ -1,3 +1,4 @@
+import json
 # from django.core import serializers
 # from django.http import HttpResponse
 from pdsservice import settings
@@ -18,11 +19,15 @@ def index(request):
 
 
 @api_view(['GET'])
-def get_user_email(request):
-    return Response({'message': 'ok'}, status=status.HTTP_200_OK)
-    # email = query_graph(get_email_graph_uri(user_id))
-    # print "User ID -> " + str(user_id)
-    # return Response({'email': email}, status=status.HTTP_200_OK)
+def get_user_email(self):
+    try:
+        user_id = str(self.kwargs['user_id'])
+        email = query_graph(get_email_graph_uri(user_id))
+
+        return Response({'email': email}, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response({'response': 'No content'}, status=status.HTTP_404_NOT_FOUND)
 
 
 @api_view(['GET'])
