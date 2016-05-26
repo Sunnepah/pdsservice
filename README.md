@@ -5,7 +5,7 @@
 [Tyk API Gateway](https://tyk.io/docs/tyk-api-gateway-v-2-0/installation-options-setup/vagrant/).*
 
 * Fork this repository.
-* `$ git clone git@github.com:<your username>/pdsservice.git`
+* `$ git clone https://github.com/Sunnepah/pdsservice.git`
 * `$ vagrant up`
 * `$ vagrant ssh`
 * `$ cd /vagrant/pdsservice`
