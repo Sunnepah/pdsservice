@@ -6,6 +6,10 @@
 
 * Fork this repository.
 * `$ git clone https://github.com/Sunnepah/pdsservice.git`
+* `$ cd pdsservice`
+* `$ mkdir roles`    # Required to keep ansible roles
+* `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git roles/Sunnepah.tyk`
+Change Tyk variables if necessary here roles/Sunnepah.tyk/var/main.yml 
 * `$ vagrant up`
 * `$ vagrant ssh`
 * `$ cd /vagrant/pdsservice`
