@@ -1,0 +1,8 @@
+---
+# Playbook for Tyk API Gateway
+
+- hosts: default
+  #remote_user: root
+  become: yes
+  roles:
+    - Sunnepah.tyk
