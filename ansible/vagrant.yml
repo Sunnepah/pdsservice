@@ -1,5 +1,6 @@
 ---
 # Playbook for Tyk API Gateway
+- include: python-env.yml
 
 - hosts: default
   #remote_user: root

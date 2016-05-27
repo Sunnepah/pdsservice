@@ -28,7 +28,7 @@ Vagrant.configure(2) do |tyk_virtuoso|
        ansible.groups = {
        "dev" => ["default"]
        }
-       ansible.playbook = "vagrant.yml"
+       ansible.playbook = "ansible/vagrant.yml"
     end
 
 end
