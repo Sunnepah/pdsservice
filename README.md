@@ -1,8 +1,11 @@
 # PDS Graph API Service
-## Installation
+## Installation 
+The following will be setup in the VM
+* [Tyk API Gateway](https://tyk.io/docs/tyk-api-gateway-v-2-0/installation-options-setup/vagrant/)
+* MySQL
+* PDS Graph API Service (Django App)
 
-*NOTE: Requires [virtualenv](http://virtualenv.readthedocs.org/en/latest/), [vagrant](https://www.vagrantup.com/docs/installation/index.html),
-[Tyk API Gateway](https://tyk.io/docs/tyk-api-gateway-v-2-0/installation-options-setup/vagrant/).*
+*NOTE: Requires [vagrant](https://www.vagrantup.com/docs/installation/index.html), [Ansible](http://).*
 
 * Fork this repository.
 * `$ git clone https://github.com/Sunnepah/pdsservice.git`
