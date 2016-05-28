@@ -13,6 +13,6 @@ The following will be setup in the VM
 * `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git ansible/roles/Sunnepah.tyk` # Change Tyk variables here `ansible/roles/Sunnepah.tyk/var/main.yml` if necessary or leave defaults.
 * `$ vagrant up`
 * `$ vagrant ssh`
-* `$ /opt/tyk-dashboard/install/bootstrap.sh tyk-local.com` # Note: This step bootstraps Tyk dashboard user, take note of credentials to login.
+* `$ /opt/tyk-dashboard/install/bootstrap.sh my-tyk-instance.dev` # Note: This step bootstraps Tyk dashboard user, take note of credentials to login.
 * `$ cd /vagrant/pdsservice`
 * `$ python manage.py runserver 9000`
