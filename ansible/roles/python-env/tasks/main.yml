@@ -34,6 +34,3 @@
 
 - name: Run migration.
   shell: python manage.py migrate chdir=/vagrant/pdsservice
-
-- name: Run Application # TODO Deploy properly with server
-  shell: python manage.py runserver 9000 chdir=/vagrant/pdsservice
