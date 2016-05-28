@@ -11,7 +11,6 @@
 Change Tyk variables if necessary here `ansible/roles/Sunnepah.tyk/var/main.yml` 
 * `$ vagrant up`
 * `$ vagrant ssh`
-Note: This step bootstraps Tyk dashboard user, take note of credentials to login. 
-* `$ /opt/tyk-dashboard/install/bootstrap.sh tyk-local.com` # To bootstrap Tyk Test-User
+* `$ /opt/tyk-dashboard/install/bootstrap.sh tyk-local.com` # Note: This step bootstraps Tyk dashboard user, take note of credentials to login.
 * `$ cd /vagrant/pdsservice`
 * `$ python manage.py runserver 9000`
