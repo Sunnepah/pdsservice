@@ -29,5 +29,5 @@ SPARQLWrapper==1.7.6
 #wstools==0.4.3
 #run sudo apt-get install libffi-dev and
 #sudo apt-get install libssl-dev before
-paramiko
+#paramiko
 

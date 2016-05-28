@@ -1,9 +1,10 @@
 ---
-# Playbook for Tyk API Gateway
-- include: python-env.yml
+# Playbook for setting up Tyk API Gateway, MySQL and install Python related packages
 
 - hosts: default
   #remote_user: root
   become: yes
   roles:
+    - ansible-mysql
+    - python-env
     - Sunnepah.tyk

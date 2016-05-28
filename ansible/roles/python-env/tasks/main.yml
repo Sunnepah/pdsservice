@@ -1,0 +1,39 @@
+---
+
+- name: Install Python setuptools
+  shell: wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+
+- name: Update apt
+  apt:  update_cache=yes
+
+- name: Install Package
+  apt:  name={{ item }} state=present update_cache=yes cache_valid_time=3600
+  with_items:
+    - python-dev
+    - libmysqlclient-dev  # http://stackoverflow.com/questions/18564745/cant-pip-install-mysql-python
+    - libffi-dev
+    - libssl-dev
+    - python-pip
+    - curl
+
+- name: Install Pdsservice dependencies.
+  shell: pip install -r requirements.txt chdir=/vagrant/pdsservice
+
+- name: Install Django App Requirements
+  shell: pip install {{ item }} chdir=/vagrant/pdsservice
+  with_items:
+    - 'MySQL-python==1.2.5'
+    - 'rcssmin==1.0.6'
+    - 'rjsmin==1.0.12'
+    - 'termcolor==1.1.0'
+    - 'Werkzeug==0.11.3'
+    - 'wheel==0.24.0'
+    - 'wstools==0.4.3'
+    - 'paramiko'
+    - 'virtualenv'
+
+- name: Run migration.
+  shell: python manage.py migrate chdir=/vagrant/pdsservice
+
+- name: Run Application # TODO Deploy properly with server
+  shell: python manage.py runserver 9000 chdir=/vagrant/pdsservice
