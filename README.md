@@ -7,11 +7,11 @@
 * Fork this repository.
 * `$ git clone https://github.com/Sunnepah/pdsservice.git`
 * `$ cd pdsservice`
-* `$ mkdir roles`    # Required to keep ansible roles
-* `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git roles/Sunnepah.tyk`
-Change Tyk variables if necessary here roles/Sunnepah.tyk/var/main.yml 
+* `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git ansible/roles/Sunnepah.tyk`
+Change Tyk variables if necessary here `ansible/roles/Sunnepah.tyk/var/main.yml` 
 * `$ vagrant up`
 * `$ vagrant ssh`
+* `$ /opt/tyk-dashboard/install/bootstrap.sh tyk-local.com` # To bootstrap Tyk Test-User
 * `$ cd /vagrant/pdsservice`
 * `$ virtualenv venv`
 * `$ pip install -r requirements.txt`
