@@ -15,6 +15,7 @@
     - libssl-dev
     - python-pip
     - curl
+    - git
 
 - name: Install Pdsservice dependencies.
   shell: pip install -r requirements.txt chdir=/vagrant/pdsservice
@@ -31,6 +32,9 @@
     - 'wstools==0.4.3'
     - 'paramiko'
     - 'virtualenv'
+
+- name: Clone python-virtuoso wrapper
+  git: repo=https://github.com/Sunnepah/python-virtuoso.git dest=/vagrant/pdsservice/virtuoso force=yes
 
 - name: Run migration.
   shell: python manage.py migrate chdir=/vagrant/pdsservice
