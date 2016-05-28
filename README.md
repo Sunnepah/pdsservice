@@ -7,8 +7,7 @@
 * Fork this repository.
 * `$ git clone https://github.com/Sunnepah/pdsservice.git`
 * `$ cd pdsservice`
-* `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git ansible/roles/Sunnepah.tyk`
-Change Tyk variables here `ansible/roles/Sunnepah.tyk/var/main.yml` especially `license_key` [Tyk License key](https://tyk.io/tyk-professional-licenses/) Check for `Tyk Professional Edition : Startup License
+* `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git ansible/roles/Sunnepah.tyk` # Change Tyk variables here `ansible/roles/Sunnepah.tyk/var/main.yml` especially `license_key` Go to [Tyk License key](https://tyk.io/tyk-professional-licenses/) and Check for `Tyk Professional Edition : Startup License
 Use Professional Edition for FREE!`
 * `$ vagrant up`
 * `$ vagrant ssh`
