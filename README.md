@@ -14,6 +14,6 @@ The following will be setup in the VM
 * `$ vagrant up`
 * `$ vagrant ssh`
 * `$ /opt/tyk-dashboard/install/bootstrap.sh my-tyk-instance.dev` # Note: This step bootstraps Tyk dashboard user, take note of credentials to login.
-* add this `192.168.33.30 http://tyk-local.com:3000` to your `/etc/hosts` file
+* add this `192.168.33.30 http://my-tyk-instance.dev` to your `/etc/hosts` file
 * `$ cd /vagrant/pdsservice`
 * `$ python manage.py runserver 9000`
