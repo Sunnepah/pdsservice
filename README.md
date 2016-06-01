@@ -5,7 +5,7 @@ The following will be setup in the VM
 * MySQL
 * PDS Graph API Service (Django App)
 
-*NOTE: Requires [Virtualbox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/docs/installation/index.html), [Ansible](http://docs.ansible.com/ansible/intro_installation.html).*
+*NOTE: Requires [Virtualbox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/docs/installation/index.html), [Ansible](http://docs.ansible.com/ansible/intro_installation.html),[Virtuoso](https://github.com/openlink/virtuoso-opensource).*
 
 * Fork this repository.
 * `$ git clone https://github.com/Sunnepah/pdsservice.git`
