@@ -19,14 +19,14 @@ def index(request):
 
 
 @api_view(['GET'])
-def get_user_email(self):
+def get_user_email(request, user_id):
     try:
-        user_id = str(self.kwargs['user_id'])
         email = query_graph(get_email_graph_uri(user_id))
 
         return Response({'email': email}, status=status.HTTP_200_OK)
 
     except Exception as e:
+        print e.message
         return Response({'response': 'No content'}, status=status.HTTP_404_NOT_FOUND)
 
 
@@ -47,7 +47,7 @@ def query_graph(graph):
         sparql.setCredentials(settings.VIRTUOSO_USER, settings.VIRTUOSO_PASSW)
 
         query = "SELECT * WHERE { GRAPH <" + graph + "> { ?s ?p ?o . } }"
-
+        print query
         sparql.setQuery(query)
 
         # JSON example
@@ -55,7 +55,8 @@ def query_graph(graph):
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
 
-        # res = json.dumps(results, separators=(',', ':'))
+        res = json.dumps(results, separators=(',', ':'))
+        print res
         return results['results']['bindings']
     except Exception as e:
         print e.message

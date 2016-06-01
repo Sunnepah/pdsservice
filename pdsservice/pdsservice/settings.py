@@ -157,7 +157,7 @@ REST_FRAMEWORK = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # GRAPH
-GRAPH_ROOT = 'http://graph.ir.ee/users'
+GRAPH_ROOT = 'https://graph.ir.ee/users'
 # GRAPH_ROOT = 'http://192.168.33.19:9000/users'
 
 # VIRTUOSO SETTINGS
