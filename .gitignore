@@ -1,1 +1,12 @@
+.idea
 .vagrant
+Tyk_adhoc_files
+bootstrap.sh
+pdsservice/static/
+Would skip repository pdsservice/virtuoso/
+python-env.yml
+Would skip repository roles/Sunnepah.tyk
+ansible/roles/Sunnepah.tyk/
+pdsservice/.idea
+pdsservice/sparqlwrapper
+pdsservice/venv
