@@ -17,13 +17,14 @@ Including another URLconf
 from django.conf.urls import url, include
 # from django.contrib import admin
 
-from views import accept_command
+from SqlUsers.views import new_sql_user, grant_graph_permission
 from pdsapi.views import status_check, get_user_email
 
 urlpatterns = [
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^$', status_check),
-    url(r'^api/v1/commands/$', accept_command, name='accept_command'),
+    url(r'^api/v1/user/new/$', new_sql_user, name='new_sql_user'),
+    url(r'^api/v1/user/graph/grant/$', grant_graph_permission, name='grant_graph_permission'),
     url(r'^status/$', status_check, name='status_check'),
     url(r'^api/v1/users/(\d+)/emails/$', get_user_email, name='get_user_email'),
 ]
