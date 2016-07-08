@@ -1,0 +1,81 @@
+FORMAT: 1A
+HOST: http://crop-it.apiblueprint.org/
+
+# crop-it
+
+Crop-It is a simple API allowing endusers crop their uploaded photo
+
+## Crop It [/cropt-it/media]
+
+### Upload image [POST]
+
++ Request (application/json)
+
+        {
+            "raw_image_content": "hfhyyilopp"
+        }
+
++ Response 200 (application/json)
+
+        [
+           {
+                "status": "success",
+                "uploaded": [
+                    {
+                        "id": "1",
+                        "image_url": "http://crop-it/media/attachments/file1.png",
+                        "format" : "png"
+                    }
+                ],
+                "user_id" : 1
+            }
+        ]
+
++ Response 400 (application/json)
+        
+        [
+            "Error": {
+                "Code" : "UP2001",
+                "Message" : "File size larger than allowed size"
+            }
+        ]
+        
++ Response 404 (application/json)
+
+        [
+        ]
+
+## Crop It [/cropt-it?image_url=http://crop-it/media/attachments/file1.png&resolution=280x400&intensity=300]
+
+### Crop It [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "results": [
+                {
+                    "image": "http://crop-it/cropped/images/file1.png",
+                    "cropped": [
+                        {
+                            
+                        }
+                    ]
+                }],
+            }
+        ]
+
++ Response 400 (application/json)
+        
+        [
+            "Error": {
+                "Code" : "CR2001",
+                "Message" : "Wrong parameters specified"
+            }
+        ]
+        
+
++ Response 404 (application/json)
+
+        [
+        ]
