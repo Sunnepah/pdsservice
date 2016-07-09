@@ -5,7 +5,7 @@ HOST: http://crop-it.apiblueprint.org/
 
 Crop-It is a simple API allowing endusers crop their uploaded photo
 
-## Crop It [/cropt-it/media]
+## Upload Image [/cropt-it/media]
 
 ### Upload image [POST]
 
@@ -45,7 +45,7 @@ Crop-It is a simple API allowing endusers crop their uploaded photo
         [
         ]
 
-## Crop It [/cropt-it?image_url=http://crop-it/media/attachments/file1.png&resolution=280x400&intensity=300]
+## Crop It [/cropt-it?image_url=http://crop-it/media/attachments/file1.png&resolution=280x400&intensity=300&effect=grayscale]
 
 ### Crop It [GET]
 
@@ -58,7 +58,9 @@ Crop-It is a simple API allowing endusers crop their uploaded photo
                     "image": "http://crop-it/cropped/images/file1.png",
                     "cropped": [
                         {
-                            
+                            "width" : 400,
+                            "height" : 400,
+                            "effect" : "grayscale"
                         }
                     ]
                 }],
