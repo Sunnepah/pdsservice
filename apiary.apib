@@ -39,11 +39,6 @@ Crop-It is a simple API allowing endusers crop their uploaded photo
                 "Message" : "File size larger than allowed size"
             }
         ]
-        
-+ Response 404 (application/json)
-
-        [
-        ]
 
 ## Crop It [/cropt-it?image_url=http://crop-it/media/attachments/file1.png&resolution=280x400&intensity=300&effect=grayscale]
 
@@ -53,17 +48,19 @@ Crop-It is a simple API allowing endusers crop their uploaded photo
 
         [
             {
-                "results": [
-                {
-                    "image": "http://crop-it/cropped/images/file1.png",
-                    "cropped": [
-                        {
-                            "width" : 400,
-                            "height" : 400,
-                            "effect" : "grayscale"
-                        }
-                    ]
-                }],
+                "results": 
+                [
+                    {
+                        "image": "http://crop-it/cropped/images/file1.png",
+                        "cropped": [
+                            {
+                                "width" : 280,
+                                "height" : 400,
+                                "effect" : "grayscale"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
 
@@ -74,10 +71,4 @@ Crop-It is a simple API allowing endusers crop their uploaded photo
                 "Code" : "CR2001",
                 "Message" : "Wrong parameters specified"
             }
-        ]
-        
-
-+ Response 404 (application/json)
-
-        [
         ]
