@@ -20,7 +20,7 @@ six==1.10.0
 # Failed to install use sudo apt-get install python-dev
 # http://stackoverflow.com/questions/18564745/cant-pip-install-mysql-python
 #sudo apt-get install libmysqlclient-dev
-#MySQL-python==1.2.5
+MySQL-python==1.2.5
 rcssmin==1.0.6
 rjsmin==1.0.12
 termcolor==1.1.0
@@ -30,4 +30,5 @@ wstools==0.4.3
 #run sudo apt-get install libffi-dev and
 #sudo apt-get install libssl-dev before
 paramiko
+coverage==3.6
 
