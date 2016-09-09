@@ -157,14 +157,13 @@ REST_FRAMEWORK = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # GRAPH
-GRAPH_ROOT = 'https://graph.ir.ee/users'
-# GRAPH_ROOT = 'http://192.168.33.19:9000/users'
+GRAPH_ROOT = 'https://mypds.me/users'
 
 # VIRTUOSO SETTINGS
-SPARQL_ENDPOINT = "pds.dev:8890/sparql"
-SPARQL_AUTH_ENDPOINT = "http://192.168.33.18:8890/sparql-auth"
+SPARQL_ENDPOINT = "localhost:8890/sparql"
+SPARQL_AUTH_ENDPOINT = "http://localhost:8890/sparql-auth"
 
-VIRTUOSO_HOST = "192.168.33.18"
+VIRTUOSO_HOST = "localhost"
 VIRTUOSO_PORT = "8890"
 VIRTUOSO_USER = "dba"
 VIRTUOSO_PASSW = "dba"

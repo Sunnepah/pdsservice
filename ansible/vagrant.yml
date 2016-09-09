@@ -8,3 +8,5 @@
     - ansible-mysql
     - python-env
     - Sunnepah.tyk
+
+- include: ../pdsvirtuoso/vagrant.yml
