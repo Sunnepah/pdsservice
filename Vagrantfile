@@ -21,7 +21,7 @@ Vagrant.configure(2) do |tyk_virtuoso|
       v.memory = 4048
       v.cpus = 2
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      v.customize ["modifyvvm", :id, "--natdnsproxy1", "on"]
+      v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
 
     tyk_virtuoso.vm.provision "ansible" do |ansible|
