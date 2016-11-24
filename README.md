@@ -10,6 +10,8 @@ The following will be setup in the VM
 #### Setup Steps.
 * `$ git clone --recursive https://github.com/Sunnepah/pdsservice.git`
 * `$ cd pdsservice`
+* NOTE: If ansible/roles/Sunnepah.tyk is still missing, `git submodule` didn't work, then clone normally in next step.
+* `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git ansible/roles/Sunnepah.tyk`
 * Change Tyk variables here `ansible/roles/Sunnepah.tyk/var/main.yml` if necessary or leave defaults.
 * `$ vagrant up`
 * `$ vagrant ssh`
