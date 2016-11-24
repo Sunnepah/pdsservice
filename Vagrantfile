@@ -9,6 +9,7 @@ Vagrant.configure(2) do |tyk_virtuoso|
 
     tyk_virtuoso.vm.hostname = "pds-tyk-virtuoso"
     tyk_virtuoso.vm.box = "ubuntu/trusty64" #"hashicorp/precise64"
+    tyk_virtuoso.vm.box_check_update = false
 
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
