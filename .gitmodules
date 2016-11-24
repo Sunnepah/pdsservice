@@ -1,5 +1,3 @@
 [submodule "ansible/roles/Sunnepah.tyk"]
 	path = ansible/roles/Sunnepah.tyk
 	url = git@github.com:Sunnepah/ansible-role-tyk.git
-	branch = master
-	fetchRecurseSubmodules = true
