@@ -1,0 +1,57 @@
+- fail: msg="Virtuoso can be installed only on ubuntu 14.04"
+  when: ansible_distribution != "Ubuntu" or ansible_distribution_release != "trusty" or ansible_distribution_version != "14.04"
+
+# virtuoso-opensource-7-common complains about java6-runtime but there's no such package so resolving it manually
+- name: 'install openjdk-6-jre'
+  apt: name=openjdk-6-jre state=present update_cache=yes cache_valid_time=3600
+# virtuoso-opensource-7 complains about libmagickwand5 but there's no such package so resolving it manually
+- name: 'install libmagickwand5'
+  apt: name=libmagickwand5 state=present update_cache=yes cache_valid_time=3600
+# gdebi pulls in dependencies of packages listed below
+- name: 'install gdebi'
+  apt: name=gdebi-core state=present
+
+- name: download virtuoso package
+  get_url: url=http://dev.zerotech.ee/debian/virtuoso-{{ virtuoso_version }}-all.tar.gz dest=/tmp/virtuoso-{{ virtuoso_version }}-all.tar.gz mode=0755
+
+- name: extract virtuoso packages
+  unarchive: src=/tmp/virtuoso-{{ virtuoso_version }}-all.tar.gz dest=/tmp copy=no
+
+- name: 'install virtuoso (dependencies resolved by gdebi)'
+  shell: gdebi -n {{ item }} chdir=/tmp creates=/usr/share/virtuoso-opensource-7/vad/conductor_dav.vad
+  with_items:
+    - virtuoso-opensource-7-common_{{ virtuoso_version }}_amd64.deb
+    - libvirtjdbc0_{{ virtuoso_version }}_amd64.deb
+    - libvirtodbc0_{{ virtuoso_version }}_amd64.deb
+    - libvirtmono0-cil_{{ virtuoso_version }}_amd64.deb
+
+- name: installing virtuoso {{ virtuoso_version }}
+  shell: DEBIAN_FRONTEND=noninteractive dpkg -i {{ item }} chdir=/tmp creates=/usr/share/virtuoso-opensource-7/vad/conductor_dav.vad
+  with_items:
+    - virtuoso-opensource-7-bin_{{ virtuoso_version }}_amd64.deb
+    - virtuoso-minimal_{{ virtuoso_version }}_all.deb
+    - virtuoso-nepomuk_{{ virtuoso_version }}_all.deb
+    - virtuoso-opensource-7_{{ virtuoso_version }}_amd64.deb
+    - virtuoso-opensource_{{ virtuoso_version }}_all.deb
+    - virtuoso-server_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-bpel_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-demo_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-doc_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-isparql_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-ods_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-rdfmappers_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-sparqldemo_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-syncml_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-tutorial_{{ virtuoso_version }}_all.deb
+    - virtuoso-vsp-startpage_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-conductor_{{ virtuoso_version }}_all.deb
+    - virtuoso-vad-ods_framework_{{ virtuoso_version }}_all.deb
+
+- name: set virtuoso parameters
+  template: src=virtuoso.ini dest=/etc/virtuoso-opensource-7/virtuoso.ini mode=0644
+
+- name: enable virtuoso
+  copy: src=virtuoso-opensource-7 dest=/etc/default/virtuoso-opensource-7 mode=0644
+
+- name: start virtuoso
+  service: name=virtuoso-opensource-7 state=started enabled=yes

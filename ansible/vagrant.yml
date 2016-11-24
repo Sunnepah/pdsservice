@@ -9,4 +9,7 @@
     - python-env
     - Sunnepah.tyk
 
+# This setup virtuoso linked data store -
+# The playbook can also be used to setup virtuoso in a separate VM instance by doing vagrant up from it's root folder
+# But for simplicity, we are installing it in same VM with Tyk and PDS Service
 - include: ../pdsvirtuoso/vagrant.yml
