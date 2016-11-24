@@ -1,0 +1,3 @@
+[submodule "Sunnepah.tyk"]
+	path = ansible/roles/
+	url = https://github.com/Sunnepah/ansible-role-tyk.git

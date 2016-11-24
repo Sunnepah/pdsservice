@@ -8,9 +8,9 @@ The following will be setup in the VM
 *NOTE: Requires [Virtualbox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/docs/installation/index.html), [Ansible](http://docs.ansible.com/ansible/intro_installation.html),[Virtuoso](https://github.com/openlink/virtuoso-opensource).*
 
 #### Setup Steps.
-* `$ git clone https://github.com/Sunnepah/pdsservice.git`
+* `$ git clone --recursive https://github.com/Sunnepah/pdsservice.git`
 * `$ cd pdsservice`
-* `$ git clone https://github.com/Sunnepah/ansible-role-tyk.git ansible/roles/Sunnepah.tyk` # Change Tyk variables here `ansible/roles/Sunnepah.tyk/var/main.yml` if necessary or leave defaults.
+* Change Tyk variables here `ansible/roles/Sunnepah.tyk/var/main.yml` if necessary or leave defaults.
 * `$ vagrant up`
 * `$ vagrant ssh`
 * `$ /opt/tyk-dashboard/install/bootstrap.sh my-tyk-instance.dev` # Note: This step bootstraps Tyk dashboard user, take note of credentials to login.
@@ -19,3 +19,6 @@ The following will be setup in the VM
 #### Run PDS Graph API Service in VM
 * `$ cd /vagrant/pdsservice`
 * `$ python manage.py runserver 0.0.0.0:9000`
+
+#### TODO
+* Serve Django App with uWSGI and Nginx.
