@@ -17,6 +17,8 @@ The following will be setup in the VM
 * `$ vagrant ssh`
 * `$ /opt/tyk-dashboard/install/bootstrap.sh my-tyk-instance.dev` # Note: This step bootstraps Tyk dashboard user, take note of credentials to login.
 * add this `192.168.33.30 http://my-tyk-instance.dev` to your `/etc/hosts` file
+* Visit [http://my-tyk-instance.dev:3000/](http://my-tyk-instance.dev:3000/) - Follow the instruction on the page to obtain tyk community edition license.
+* After obtaining the license and inserting it, the login screen should be displayed, use the user credentials obtained during the user bootstrap step.
 
 #### Run PDS Graph API Service in VM
 * `$ cd /vagrant/pdsservice`
